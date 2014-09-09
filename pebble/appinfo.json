@@ -1,0 +1,18 @@
+{
+  "uuid": "6092637b-8f58-4199-94d8-c606b1e45040",
+  "shortName": "PebbleKit Android",
+  "longName": "PebbleKit Android Example App",
+  "companyName": "Pebble",
+  "versionCode": "1",
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "KEY_BUTTON": 0,
+    "KEY_VIBRATE": 1
+  },
+  "resources": {
+    "media": []
+  }
+}
