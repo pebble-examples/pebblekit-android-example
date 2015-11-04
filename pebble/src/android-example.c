@@ -86,12 +86,18 @@ static void click_config_provider(void *context) {
 /******************************* main_window **********************************/
 
 static void main_window_load(Window *window) {
+  Layer *window_layer = window_get_root_layer(window);
+  GRect bounds = layer_get_frame(window_layer);
+
   // Create main TextLayer
-  s_text_layer = text_layer_create(GRect(0, 0, 144, 168));
+  s_text_layer = text_layer_create(bounds);
   text_layer_set_font(s_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
   text_layer_set_text(s_text_layer, "Open Android app and press any button.");
   text_layer_set_text_alignment(s_text_layer, GTextAlignmentCenter);
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_text_layer));
+#ifdef PBL_ROUND
+  text_layer_enable_screen_text_flow_and_paging(s_text_layer, 5);
+#endif
 }
 
 static void main_window_unload(Window *window) {
